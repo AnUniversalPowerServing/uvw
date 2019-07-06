@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/api/uvw-core.js"></script>
+<script type="text/javascript">
+display_gameTime('gt_week','gt_timer');
+var screenHeight = window.innerHeight;
+var gameHeight = screenHeight*0.6;
+var gameNewsHeight = screenHeight*0.4;
+$(document).ready(function(){
+$('#uvw-screen-game').css('height',gameHeight);
+$('#uvw-screen-game').css('background-color','pink');
+$('#uvw-screen-news').css('height',gameNewsHeight);
+$('#uvw-screen-news').css('background-color','red');
+});
+</script>
+<style>
+.news-header { height:auto;background-color:red;color:#fff;padding:2px; }
+.news-scrolling { position:relative;height:auto;font-weight:bold;bottom:0;padding:0px; }
+.bg-green { background-color:green;color:#fff; }
+.bg-red { background-color:red;color:#fff; }
+.bg-blue { background-color:blue;color:#fff; }
+.bg-pink { background-color:pink;color:#000; }
+.bg-cream { background-color:#f5eb95;color:#000; }
+.bg-orange { background-color:#ff5722;color:#fff; }
+.bg-darkpink { background-color:#e91e63;color:#fff; }
+</style>
+</head>
+<body>
+<!-- -->
+<div class="container-fluid">
+
+<div id="uvw-screen-game" class="row">
+
+<div>
+  <div class="col-xs-2 bg-red">
+    <div align="left"><h5><b>NEWS</b></h5></div>
+  </div><!-- col-xs-3 -->
+  <div class="col-xs-4 bg-blue">
+    <div align="right" id="gt_rupees"><h5><b>Rs. 10000</b></h5></div>
+  </div><!-- col-xs-3 -->
+  <div class="col-xs-3 bg-green">
+    <div align="right" id="gt_timer"></div>
+  </div><!-- col-xs-3 -->
+  <div class="col-xs-3 bg-green">
+    <div align="left" id="gt_week"></div>
+  </div><!-- col-xs-3 -->
+</div>
+
+<div style="overflow:scroll;">
+
+</div>
+
+
+
+</div><!-- row -->
+
+<div id="uvw-screen-news" class="row">
+ <div class="col-xs-12">
+ 
+    <div class="row">
+	   <div align="center" class="col-xs-12 news-header"><b>GLOBAL NEWS</b></div>
+	</div>
+	
+	<div class="row" style="border:1px solid #fff;">
+	  <div class="col-xs-2 bg-blue"><b>Local:</b></div>
+	  <div class="col-xs-10 news-scrolling bg-cream">
+		<marquee>QERT</marquee>
+	  </div>
+	</div>
+	
+	<div class="row">
+       <img class="col-xs-8" src="images/news-reporter.gif" style="padding:0px;height:60%;"/>
+       <div class="col-xs-4">
+	      <div class="row">
+            <div align="center" class="col-xs-12 bg-blue"><b>Latest News</b></div>
+		    <marquee class="col-xs-12" style="height:50%;color:#fff;font-weight:bold;" direction="up">QERT</marquee>
+		  </div>
+       </div>
+    </div>
+	
+	<div class="row" style="border-top:1px solid #fff;">
+	  <div class="col-xs-3 bg-blue"><b>National:</b></div>
+      <div class="col-xs-9 news-scrolling bg-darkpink">
+         <marquee>QERT</marquee>
+      </div>
+    </div>
+	
+	<div class="row" style="border-top:1px solid #fff;">
+	  <div class="col-xs-3 bg-blue"><b>Global:</b></div>
+	  <div class="col-xs-9 news-scrolling bg-pink">
+		<marquee>QERT</marquee>
+	  </div>
+	</div>
+	
+	<div class="row" style="border-top:1px solid #fff;">
+	  <div class="col-xs-3 bg-blue"><b>Other:</b></div>
+	  <div class="col-xs-9 news-scrolling bg-darkpink">
+		<marquee>QERT</marquee>
+	  </div>
+	</div>
+	
+ </div>
+
+ 
+  
+  
+  
+  
+  
+</div><!-- row -->
+
+</div><!-- container-fluid -->
+<!-- -->
+
+
+</body>
+</html>

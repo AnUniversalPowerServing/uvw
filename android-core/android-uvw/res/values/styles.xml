@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+    </style>
+    
+    <style name="noAnimTheme" parent="android:Theme">
+       <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+</resources>

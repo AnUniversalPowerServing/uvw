@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="image_chooser">File Chooser</string>
+    <string name="app_name">UVW Game</string>
+    <string name="ad_title">Youtube</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="result_text_default">Please focus camera to QR Code</string>
+    <string name="facebook_app_id">2397874797151053</string>
+    <string name="fb_login_protocol_scheme">fb2397874797151053</string>
+    <string name="title_activity_fbk_login">FbkLogin</string>
+
+</resources>

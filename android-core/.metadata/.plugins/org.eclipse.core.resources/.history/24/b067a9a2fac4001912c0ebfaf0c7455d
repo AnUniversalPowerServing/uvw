@@ -1,0 +1,9 @@
+package anups.uvw.util;
+
+public class LogcatHelper {
+  private static LogcatHelper INSTANCE = null;
+  private static String PATH_LOGCAT;
+  private LogDumper mLogDumper = null;
+  private int mPId;
+
+}

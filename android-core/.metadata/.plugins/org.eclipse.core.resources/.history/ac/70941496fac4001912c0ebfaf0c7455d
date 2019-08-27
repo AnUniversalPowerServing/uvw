@@ -1,0 +1,5 @@
+package anups.uvw.util;
+
+public class LogcatHelper {
+
+}

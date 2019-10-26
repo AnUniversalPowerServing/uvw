@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<script src="js/api/jquery.min.js"></script>
+<script src="js/api/bootstrap.min.js"></script>
+<script src="js/api/jquery-ui.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
+<style>
+@keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-moz-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-webkit-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-ms-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-o-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+html, body { overflow:hidden; }
+body{ animation: animatedBackground 60s linear infinite;-moz-animation: animatedBackground 60s linear infinite;
+-webkit-animation: animatedBackground 60s linear infinite;-ms-animation: animatedBackground 60s linear infinite;
+-o-animation: animatedBackground 60s linear infinite; }
+@media only screen and (min-width: 1200px) { 
+  #logo-img { width:800px;height:auto;margin-left:20%;margin-top:-8%;z-index:1; } 
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px) { 
+ #logo-img { width:800px;height:auto;margin-left:13%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (max-width: 991px) and (min-width: 775px) {
+ #logo-img { width:650px;height:auto;margin-left:14%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 699px) and (max-width: 774px) {
+ #logo-img { width:600px;height:auto;margin-left:8%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 601px) and (max-width: 698px) {
+ #logo-img { width:570px;height:auto;margin-left:4%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+ #logo-img { width:550px;height:auto;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 500px) and (max-width: 549px) {
+ #logo-img { width:550px;height:auto;margin-top:-8%;margin-left:-4%;z-index:1; }
+}
+@media only screen and (min-width: 450px) and (max-width: 499px) {
+ #logo-img { width:500px;height:auto;margin-top:-8%;margin-left:-6%;z-index:1; }
+}
+@media only screen and (min-width: 430px) and (max-width: 449px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-3%;z-index:1; }
+}
+@media only screen and (min-width: 400px) and (max-width: 429px) {
+ #logo-img { width:430px;height:auto;margin-top:-8%;margin-left:-1%;z-index:1; }
+}
+@media only screen and (min-width: 380px) and (max-width: 399px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-8%;z-index:1; }
+}
+@media only screen and (min-width: 360px) and (max-width: 379px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-12%;z-index:1; }
+}
+@media only screen and (min-width: 340px) and (max-width: 359px) {
+ #logo-img { width:410px;height:auto;margin-top:-8%;margin-left:-10%;z-index:1; }
+}
+@media only screen and (min-width: 320px) and (max-width: 339px) {
+ #logo-img { width:380px;height:auto;margin-top:6%;margin-left:-9%;z-index:1; }
+}
+@media only screen and (min-width: 300px) and (max-width: 329px) {
+ #logo-img { width:335px;height:auto;margin-top:6%;margin-left:-7%;z-index:1; }
+}
+@media only screen and (min-width: 200px) and (max-width: 300px) {
+ #logo-img { width:335px;height:auto;margin-top:6%;margin-left:-7%;z-index:1; }
+}
+@font-face { font-family:SnowHut;src: url('fonts/SnowHut.ttf'); }
+.btn-getStarted,.btn-getStarted:hover,.btn-getStarted:focus,.btn-getStarted:active { 
+  font-family:SnowHut;font-family:SnowHut;color:#ff9800;background-color:#951902;border:3px solid #ff9800;
+  font-size:18px;padding: 6px 45px 4px 45px; }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000;text-align:center; }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+// alert(window.innerWidth);
+$('body').css({ 'width':window.innerWidth+'px', 'height':window.innerHeight+'px', 'color':'#fff;',
+ 'font-weight':'bold', 'background-image':'url("images/city.jpg")', 'background-position':'0px 0px',
+ 'background-repeat':'repeat-x'});
+});
+</script>
+</head>
+<body id="body">
+
+<div id="bg">
+ <img id="logo-img" src="images/logo.png"/>
+ <div align="center"><button class="btn btn-getStarted"><b>Lets Get Started !</b></button></div>
+</div>
+
+<div align="center" class="footer"><b>Game Version: 1.0.0</b></div>
+
+</body>
+</html>

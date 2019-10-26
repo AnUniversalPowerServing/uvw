@@ -113,6 +113,7 @@
             android:label="@string/title_activity_fbk_login" >
         </activity>
          -->
+         <service android:name="anup.uvw.music.BackgroundMusicService"></service>
     </application>
 
 </manifest>

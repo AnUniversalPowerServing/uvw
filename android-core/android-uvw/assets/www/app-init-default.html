@@ -1,50 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MyLocalHook</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>  
-@font-face { font-family: myFirstFont;src:url(sansation_light.woff); }
-body { background-image:url('images/bg-page.jpg');background-repeat:no-repeat;
-background-size:auto;background-position: center center;  }
-.mtop60p { margin-top:60px; }
-.mtop160p { margin-top:160px; }
-.mbot35p { margin-bottom:35px; }
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<script src="js/api/jquery.min.js"></script>
+<script src="js/api/bootstrap.min.js"></script>
+<script src="js/api/jquery-ui.js"></script>
+<script src="js/api/core-skeleton.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="styles/api/core-skeleton.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
+<style>
+html, body { overflow:hidden; }
 
-.img { position:absolute;width:150px;height:150px;border:1px solid #000; }
-.img340 { margin-top:24px;-ms-transform:rotate(-20deg);-webkit-transform:rotate(-20deg);transform:rotate(-20deg); }
-.img350 { margin-top:15px;-ms-transform:rotate(-10deg);-webkit-transform:rotate(-10deg);transform:rotate(-10deg); }
-.img0 { margin-top:15px;-ms-transform:rotate(0deg);-webkit-transform:rotate(0deg);transform:rotate(0deg); }
-.img10 { margin-top:25px;-ms-transform:rotate(10deg);-webkit-transform:rotate(10deg);transform:rotate(10deg); }
-.img20 { margin-top:50px;-ms-transform:rotate(20deg);-webkit-transform:rotate(20deg);transform:rotate(20deg); }
-.img30 { margin-top:60px;-ms-transform:rotate(30deg);-webkit-transform:rotate(30deg);transform:rotate(30deg); }
+@media only screen and (min-width: 1200px) { 
+  #logo-img { width:800px;height:auto;margin-left:20%;margin-top:-8%;z-index:1; } 
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px) { 
+ #logo-img { width:800px;height:auto;margin-left:13%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (max-width: 991px) and (min-width: 775px) {
+ #logo-img { width:650px;height:auto;margin-left:14%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 699px) and (max-width: 774px) {
+ #logo-img { width:600px;height:auto;margin-left:8%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 601px) and (max-width: 698px) {
+ #logo-img { width:570px;height:auto;margin-left:4%;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 550px) and (max-width: 600px) {
+ #logo-img { width:550px;height:auto;margin-top:-8%;z-index:1; }
+}
+@media only screen and (min-width: 500px) and (max-width: 549px) {
+ #logo-img { width:550px;height:auto;margin-top:-8%;margin-left:-4%;z-index:1; }
+}
+@media only screen and (min-width: 450px) and (max-width: 499px) {
+ #logo-img { width:500px;height:auto;margin-top:-8%;margin-left:-6%;z-index:1; }
+}
+@media only screen and (min-width: 430px) and (max-width: 449px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-3%;z-index:1; }
+}
+@media only screen and (min-width: 400px) and (max-width: 429px) {
+ #logo-img { width:430px;height:auto;margin-top:-8%;margin-left:-1%;z-index:1; }
+}
+@media only screen and (min-width: 380px) and (max-width: 399px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-8%;z-index:1; }
+}
+@media only screen and (min-width: 360px) and (max-width: 379px) {
+ #logo-img { width:450px;height:auto;margin-top:-8%;margin-left:-12%;z-index:1; }
+}
+@media only screen and (min-width: 340px) and (max-width: 359px) {
+ #logo-img { width:410px;height:auto;margin-top:-8%;margin-left:-10%;z-index:1; }
+}
+@media only screen and (min-width: 320px) and (max-width: 339px) {
+ #logo-img { width:380px;height:auto;margin-top:6%;margin-left:-9%;z-index:1; }
+}
+@media only screen and (min-width: 300px) and (max-width: 329px) {
+ #logo-img { width:335px;height:auto;margin-top:6%;margin-left:-7%;z-index:1; }
+}
+@media only screen and (min-width: 200px) and (max-width: 300px) {
+ #logo-img { width:335px;height:auto;margin-top:6%;margin-left:-7%;z-index:1; }
+}
+.btn-getStarted,.btn-getStarted:hover,.btn-getStarted:focus,.btn-getStarted:active { 
+  font-family:SnowHut;font-family:SnowHut;color:#ff9800;background-color:#951902;border:3px solid #ff9800;
+  font-size:18px;padding: 6px 45px 4px 45px; }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000;text-align:center; }
 </style>
-<script>
-//
-// setTimeout(function(){ window.location.href='app-init-startgame.html'; },5000);
+<script type="text/javascript">
+$(document).ready(function(){
+ body_bg_loader('images/city.jpg');
+});
 </script>
 </head>
-<body>
+<body id="body">
 
-<div class="container-fluid">
-<div class="row">
-<div align="center" class="col-xs-12" style="position:relative;">
-<div style="margin-top:15px;">
- <img class="img img340" src="images/uvw-logo.png" style="left:6%;"/>
- <img class="img img350" src="images/uvw-logo.png" style="left:10%;"/>
- <img class="img img0" src="images/uvw-logo.png" style="left:15%;"/>
- <img class="img img10" src="images/uvw-logo.png" style="left:20%;"/>
- <img class="img img20" src="images/uvw-logo.png" style="left:25%;"/>
+<div id="bg">
+ <img id="logo-img" src="images/logo.png"/>
+ <div align="center">
+   <a href="app-init-intro.html">
+    <button class="btn btn-getStarted"><b>Lets Get Started !</b></button>
+   </a>
+ </div>
 </div>
-<br/>
-</div><!-- /.col-xs-12 -->
-<div align="center" class="col-xs-12">
-<img src="images/uvw-title.png" style="width:150px;"/>
-</div><!-- /.col-xs-12 -->
-</div><!-- /.row -->
-</div><!-- /.container-fluid -->
 
+<div align="center" class="footer"><b>Game Version: 1.0.0</b></div>
 
 </body>
 </html>

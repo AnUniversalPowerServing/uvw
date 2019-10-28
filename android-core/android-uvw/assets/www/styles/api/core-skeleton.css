@@ -1,0 +1,35 @@
+@keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-moz-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-webkit-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-ms-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+@-o-keyframes animatedBackground { 0% { background-position: 0 0; } 100% { background-position: -1920px 0; } }
+body{ animation: animatedBackground 60s linear infinite;-moz-animation: animatedBackground 60s linear infinite;
+-webkit-animation: animatedBackground 60s linear infinite;-ms-animation: animatedBackground 60s linear infinite;
+-o-animation: animatedBackground 60s linear infinite; }
+@font-face { font-family:SnowHut;src: url('../../fonts/SnowHut.ttf'); }
+
+/* Tomato-Red Flavour ::: Start */
+.btn-tomatoRed,.btn-tomatoRed:hover,.btn-tomatoRed:focus,.btn-tomatoRed :active { color:#fff;background-color:#dc3703;border-color:#ffeb3b;border-radius:0px; } 
+.font-tomatoRed { color:#dc3703; }
+.borderTop-tomatoRed { border-top: 2px solid #dc3703; }
+/* Tomato-Red Flavour ::: End */
+
+
+/* Modal ::: Start */
+.modal-content { background-color: #FFEB3B;border: 5px solid #dc3703; }
+/* Modal ::: End */
+
+@media only screen and (min-width: 1200px) {
+.desktop-view { display:block; }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+.desktop-view { display:none; }
+}
+@media only screen and (max-width: 767px) {
+.desktop-view { display:none; }
+.modal { margin-top:30px; }
+}
+
+.mtop15p { margin-top:15px; }
+.hide-block { display:none; }
+

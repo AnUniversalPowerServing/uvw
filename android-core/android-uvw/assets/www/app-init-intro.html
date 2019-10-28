@@ -4,122 +4,97 @@
 <title></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<script src="js/api/jquery.min.js"></script>
+<script src="js/api/bootstrap.min.js"></script>
+<script src="js/api/jquery-ui.js"></script>
+<script src="js/api/core-skeleton.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="styles/api/core-skeleton.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
 <style>
-body { background-color:#fffdd0;}
-.hr-red { border-color: red; }
-.pad0 { padding: 0px; }
-.mtop5p { margin-top: 5px; }
-.mtop10p { margin-top: 10px; }
-.mtop15p { margin-top: 15px; }
-.mbot15p { margin-bottom: 15px; }
-.mtop35p { margin-top: 35px; }
-.hide-block { display: none; }
-.font-red { color: red; }
-.font-grey { color:#555; }
-.font-mdm-grey { color:#666; }
-.font-lgt-grey { color:#ccc; }
-code { font-weight: bold;font-size: 11px; }
-hr { margin-bottom: 10px; }
-.bg-grey { background-color:#f5f5f5; }
-.mtop65p { margin-top:85px; }
-/* */
-#welcome-info-01 { border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5; }
-#welcome-info-02 { margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5; }
-#welcome-info-03 { padding:6px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5; }
-#welcome-info-04 { margin-top:5px;padding:6px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5; }
+html, body { overflow:hidden; }
+#college-guy { height:auto; }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000; }
 </style>
-<script>
-class screen1 {
-info1(){
-return '<b>100 Million</b> Citizens in your Country';
-}
-info2(){
-return '<b>1 Million</b> Foreigners in your Country are visited for vacation and occupation';
-}
-info3(){
-return '<b>600</b> People are living in your locality';
-}
-info4(){
-var content='<div>Primary livelihood of your locality is on';
-content+='<b>Agriculture</b> sector.</div>';
-content+='<div align="right">';
-content+='<button class="btn btn-xs btn-default"><b>See Sectors Ranking</b></button>';
-content+='</div>';
-return content;
-}
-}
-
-var s1=new screen1();
+<script type="text/javascript">
+var modalIndex=0;
+var popupcontent={ 0: "<b>Hello Anup,</b><br/> My Name is Avadutha. Here, I am your Friend, the Game Instructor and the Virtual Assistant.",
+1:"<p>Now, you are the Citizen of <b>Virtual India</b>, living at <b>locality</b>, <b>location</b> in the state of <b>state</b>.</p>",
+2:"The <b>Central Government of Virtual India</b> is providing full-time free Education to their Citizens till 10<sup>th</sup> Standard which is mandatory to complete by everyone in the Country.<br/> The Courses above 10th Standard are <i>paid part-time courses</i> where students can complete them based on their interest by doing part-time jobs.",
+3:"Now, it's the time where you have completed your 10<sup>th</sup> standard and entering into the Society. It's your wish either you go for higher education or not and it's up-to-you.<br/> But, as per the country rules, it's mandatory to you to find and join a job. <br/><br/><b>As per your Country rules, Citizen without a Job is considered as Offender and may keep you in Jail.</b><br/><br/>Therfore, you find out a job as per your qualification and start your earnings.<br/>",
+};
 $(document).ready(function(){
-document.getElementById("welcome-info-01").innerHTML=s1.info1();
-document.getElementById("welcome-info-02").innerHTML=s1.info2();
-document.getElementById("welcome-info-03").innerHTML=s1.info3();
-document.getElementById("welcome-info-04").innerHTML=s1.info4();
+ body_bg_loader('images/bg/1.jpg');
+ initailizeModal();
 });
+function loadModalContent(){
+ if(modalIndex==0){ $("#modal_content_backBtn").addClass('hide-block'); }
+ else { $("#modal_content_backBtn").removeClass('hide-block'); }
+ if(modalIndex==3){ document.getElementById("modal_content_nextBtn").innerHTML='<b>Begin your Game!</b>'; }
+ else { document.getElementById("modal_content_nextBtn").innerHTML='<b>Next</b>';  }
+ document.getElementById("modal_content_intro").innerHTML=popupcontent[modalIndex];
+}
+function loadModalNext(){
+ modalIndex++;
+ if(modalIndex<4){ loadModalContent(); }
+ else { window.location.href='http://192.168.1.4/uvw/android-core/android-uvw/assets/www/app-game-dashboard.html'; }
+}
+function loadModalBack(){
+ modalIndex--;
+ if(modalIndex<4){ loadModalContent(); }
+}
+function initailizeModal(){
+ modalIndex=0;
+ loadModalContent();
+ $("#gameInstructorModal").modal({backdrop: "static"});
+}
 </script>
 </head>
-<body>
+<body id="body">
+<!-- Modal ::: Start -->
+<div id="gameInstructorModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-<div class="list-group">
-<div align="center" class="list-group-item">
-<b>WELCOME TO UNDER VIRTUAL WORLD</b>
-</div><!--/.list-group-item -->
-</div><!--/.list-group -->
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" style="color:#000;">
+	    <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+		<h4 align="center" class="modal-title font-tomatoRed">
+		   <b>Welcome to Virtual World !</b><hr class="borderTop-tomatoRed"/></h4>
+		<div id="modal_content_intro" style="line-height:24px;">
+		   
 
-<div class="container-fluid mtop15p">
-<div class="row">
-<div align="center" class="col-xs-6" style="padding-right:6px;">
-
-<div id="welcome-info-01"></div>
-
-<div id="welcome-info-02"></div>
-
-</div><!--/.col-xs-6 -->
-
-<div align="center" class="col-xs-6">
-
-<div id="welcome-info-03" align="left">
-
-</div>
-
-<div id="welcome-info-04" align="left">
-
-</div>
-
-</div><!--/.col-xs-6 -->
-
-</div><!--/.row -->
-
-<div class="row">
-<div align="center" class="col-xs-12">
-<!-- -->
-<div style="position:relative;margin-top:15px;">
-<div align="left" style="width:150px;height:150px;border-radius:50%;background-color:#ccc;"></div>
-<div align="left" style="z-index:1;position:absolute;padding:6px;top:70%;width:100%;background-color:#f5f5f5;border:2px solid #ccc;">
-
-<div>
-Hi &lt;Username&gt;,<br/>
-You are the Citizen of &lt;Country&gt; staying at 
-&lt;locality&gt;, &lt;location&gt;, &lt;state&gt;, 
-&lt;Country&gt;.
-</div>
-
-<div align="right">
-<button class="btn btn-default btn-xs"><b>Ok</b></button>
-</div>
-
-</div>
-<!-- -->
-</div><!--/.col-xs-12 -->
-</div><!--/.row -->
+		</div>
+		<div align="right"  style="margin-top:15px;">
+		 <div class="btn-group">
+		   <button id="modal_content_backBtn" class="btn btn-tomatoRed" onclick="javascript:loadModalBack();"><b>Back</b></button>
+		   <button id="modal_content_nextBtn" class="btn btn-tomatoRed" onclick="javascript:loadModalNext();"><b>Next</b></button>
+		 </div>
+		</div>
+      </div><!--/.modal-body -->
+    </div><!--/.modal-content -->
+	<!-- Modal Content -->
 	
+  </div><!--/.modal-dialog -->
+</div><!--/.modal -->
+<!--Modal ::: End -->
+
+ <div class="footer">
+   <div class="container-fluid">
+    <div class="row">
+	  <div class="col-xs-3"></div>
+      <img id="college-guy" class="col-md-2 col-sm-2 col-xs-6" src="images/avadhuta.png"/>
+	  <div class="col-xs-3"></div>
+	</div>
+   </div><!--/.container-fluid -->
+    <div class="container-fluid desktop-view">
+    <div class="row">
+	  <div class="col-xs-12" style="height:40px;background-color:#3885dd;"></div>
+	</div>
+   </div><!--/.container-fluid -->
+ </div><!--/.footer -->
 </body>
 </html>

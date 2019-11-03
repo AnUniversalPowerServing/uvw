@@ -1,7 +1,0 @@
-package anup.uvw.music;
-
-import android.app.Service;
-
-public class BackgroundMusicService extends Service {
-
-}

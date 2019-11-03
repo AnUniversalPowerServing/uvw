@@ -87,26 +87,25 @@ public class AppManagement extends ActionBarActivity {
            if(psversionNumber>versionNumber){
         	   status="APP_TO_UPDATE";
            }
-    	   
-    	 } catch (PackageManager.NameNotFoundException e) {
-    		 status="UP-TO-DATE";
-    	 }
+     } catch (PackageManager.NameNotFoundException e) {
+    	status="UP-TO-DATE";
+     }
 	}
 	 return status;
     }
 	
 	@JavascriptInterface
-	public String getTemplateAndLoad(String fileName) {
+	public String getTemplateAndLoad(String fileWithPath) {
 	    AssetManager mgr = mContext.getAssets();
 		StringBuilder text = new StringBuilder();
 		try {
-		 InputStream in = mgr.open(BusinessConstants.ASSETS_WWW_FOLDER+fileName, AssetManager.ACCESS_BUFFER);
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
+		 InputStream in = mgr.open(BusinessConstants.ASSETS_WWW_FOLDER+fileWithPath, AssetManager.ACCESS_BUFFER);
+		 BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		 String line;
          while ((line = br.readLine()) != null) {
-		         text.append(line).append('\n');
-		     }
-		     br.close();
+		   text.append(line).append('\n');
+		 }
+		 br.close();
 		} catch(Exception e) {  logger.error("Exception : "+e.getMessage()); }	
 		return text.toString();
     }

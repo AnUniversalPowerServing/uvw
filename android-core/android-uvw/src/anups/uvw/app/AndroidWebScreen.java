@@ -350,7 +350,7 @@ protected void onCreate(Bundle savedInstanceState) {
         
       //  webView.loadUrl("http://192.168.1.4/uvw/android-core/android-uvw/assets/www/app-init-default.html");
       webView.loadUrl("file:///android_asset/www/app-init-default.html");
-       
+     //   webView.loadUrl("http://192.168.1.4/uvw/android-core/android-uvw/assets/www/app-game-dashboard.html");
       // webView.loadUrl("http://192.168.1.4/uvw/android-core/android-uvw/assets/www/uvw-bg-img.html");
     }
 

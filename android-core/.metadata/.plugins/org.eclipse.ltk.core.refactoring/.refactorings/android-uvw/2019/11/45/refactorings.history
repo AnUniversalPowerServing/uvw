@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;fileName&apos; in &apos;anups.uvw.js.AppManagement.getTemplateAndLoad(...)&apos; to &apos;fileWithPath&apos;&#x0D;&#x0A;- Original project: &apos;android-uvw&apos;&#x0D;&#x0A;- Original element: &apos;anups.uvw.js.AppManagement.getTemplateAndLoad(String).fileName&apos;&#x0D;&#x0A;- Renamed element: &apos;fileName&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;fileName&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;anups.uvw.js{AppManagement.java[AppManagement~getTemplateAndLoad~QString;@fileName!3695!3709!3702!3709!QString;!0!true" name="fileWithPath" references="true" stamp="1572756877929" version="1.0"/>
+</session>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<link rel="stylesheet" href="styles/api/simple-sidebar.css">
+<script type="text/javascript" src="js/api/jquery.min.js"></script>
+<script type="text/javascript" src="js/api/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/api/jquery-ui.js"></script>
+<script type="text/javascript" src="js/api/core-skeleton.js"></script>
+<script type="text/javascript" src="js/api/uvw-core.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="styles/api/core-skeleton.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
+<style>
+body { background-image:url('images/simple-template.jpg'); }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+ document.getElementById("sidebar-wrapper").innerHTML=Android.getTemplateAndLoad('templates/sidemenu-wrapper.html');
+ if($(window).width()<=768){ sideWrapperToggle(); }
+});
+function sideWrapperToggle(){
+ if($("#wrapper").hasClass('toggled')) { $("#wrapper").removeClass('toggled'); }
+ else { $("#wrapper").addClass("toggled"); }
+}
+</script> 
+</head>
+<body>
+<!-- -->
+<div id="wrapper" class="toggled">
+	<div id="sidebar-wrapper"></div>
+	<div id="page-content-wrapper">
+<!-- -->
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12 pad0">
+<!-- -->
+<div class="list-group borderRad0 mbot0">
+<div align="center" class="list-group-item bg-tomato">
+<b>Recruitment Center</b>
+</div><!--/.list-group-item -->
+</div><!--/.list-group -->
+<!-- -->
+</div><!--/.col-xs-12 -->
+</div><!--/.row -->
+<div class="row">
+<div class="col-xs-4 pad0">
+<!-- -->
+<div class="list-group borderRad0">
+<div align="center" class="list-group-item bg-drkyellow">
+<b>Jobs</b>
+</div><!--/.list-group-item -->
+</div><!--/.list-group -->
+<!-- -->
+</div><!--/.col-xs-4 -->
+<div class="col-xs-8 pad0">
+<!-- -->
+<div class="list-group borderRad0">
+<div align="center" class="list-group-item bg-yellow">
+<b>Recruitment Agencies</b>
+</div><!--/.list-group-item -->
+</div><!--/.list-group -->
+<!-- -->
+</div><!--/.col-xs-8 -->
+</div><!--/.row -->
+
+</div><!--/.container-fluid -->
+<!-- -->
+</div><!--/#page-content-wrapper -->
+</div><!--/#wrapper -->
+</body>
+</html>

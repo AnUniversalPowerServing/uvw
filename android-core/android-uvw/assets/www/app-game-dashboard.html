@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<link rel="stylesheet" href="styles/api/simple-sidebar.css">
+<script type="text/javascript" src="js/api/jquery.min.js"></script>
+<script type="text/javascript" src="js/api/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/api/jquery-ui.js"></script>
+<script type="text/javascript" src="js/api/core-skeleton.js"></script>
+<script type="text/javascript" src="js/api/uvw-core.js"></script>
+<script type="text/javascript" src="js/api/ui-templates.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="styles/api/core-skeleton.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
+<script type="text/javascript">
+display_gameTime('gt_week','gt_timer');
+</script>
+<style>
+.news-scrolling { position:relative;height:auto;font-weight:bold;bottom:0;padding:0px; }
+body { background-image:url('images/simple-template.jpg'); }
+.progress { margin-top:6px;height:5px;margin-bottom:0px; }
+.navbar-uvw-header { background-color:#2196f3;background-repeat:repeat-x;margin-bottom:0px;border-radius:0px; }
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+ document.getElementById("appNotificationsHeader").innerHTML=uiCommons.appNotificationsHeader_view();
+ document.getElementById("appStatisticsHeader").innerHTML=uiCommons.appStatisticsHeader_view();
+ document.getElementById("homeGUIdisplay").innerHTML=uiHome.gui_display();
+ document.getElementById("offersNewsNeighbourhood").innerHTML=uiHome.offersNewsNeighborhood();
+ document.getElementById("appFooter").innerHTML=uiCommons.appFooter_view();
+ appFooterMenu_seeNeighborhood();
+});
+function appFooterMenu_seeNeighborhood(){
+ $('#apphome_onn_seeNeighborhood').click(function() { 
+  $('ul#appMenuList').trigger('click');
+  $('ul#appMenuList').animate({ scrollLeft: "305px" }, "slow");
+  appFooterMenu_sel('appMenuList_neighborhood');
+ });
+}
+function appFooterMenu_sel(id){
+ var ids=["appMenuList_home","appMenuList_profile","appMenuList_property","appMenuList_career","appMenuList_job",
+		  "appMenuList_market","appMenuList_bank","appMenuList_neighborhood","appMenuList_shopping",
+		  "appMenuList_education","appMenuList_entertainment","appMenuList_society","appMenuList_inviteFriends"];
+ for(var index=0;index<ids.length;index++){
+  if(ids[index]===id){
+   if($('li#'+ids[index]+'>a').hasClass('font-white')){ $('li#'+ids[index]+'>a').removeClass('font-white'); }
+   if(!$('li#'+ids[index]+'>a').hasClass('font-lgtRed')){ $('li#'+ids[index]+'>a').addClass('font-lgtRed'); }
+  } else {
+    if(!$('li#'+ids[index]+'>a').hasClass('font-white')){ $('li#'+ids[index]+'>a').addClass('font-white'); }
+    if($('li#'+ids[index]+'>a').hasClass('font-lgtRed')){ $('li#'+ids[index]+'>a').removeClass('font-lgtRed'); }
+  }
+ }
+}
+</script> 
+</head>
+<body>
+<style>
+.badge-notify1{ background:red;position:relative;top: -15px;left: -10px; }
+.badge-notify2{ background:red;position:relative;top: -15px;left: -4px; }
+.badge-notify3{ background:red;position:relative;top: -15px;left: -6px; }
+.badge { background-color:#fff;color:#000; }
+.fa-notify-icon { font-size:20px;margin-bottom:15px;  }
+#notify-icon-div { margin-top:18px; }
+a#notify-notificationsrequest,a#notify-notificationsrequest:hover, a#notify-notificationsrequest:active { text-decoration:none; }
+.badge-blink { animation-duration: 600ms;animation-name: blink;animation-iteration-count: infinite;
+    animation-direction: alternate;-webkit-animation:blink 600ms infinite; /* Safari and Chrome */ }
+@keyframes blink { from { color:#000; } to { color:#fff;  } }
+@-webkit-keyframes blink { from { color:#000; } to { color:#fff;  } }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000; }
+</style>
+	<div id="appNotificationsHeader"></div>
+	<div id="appStatisticsHeader"></div>
+	<div id="homeGUIdisplay"></div>
+	<div id="offersNewsNeighbourhood"></div>
+	<div id="appFooter"></div>
+
+<!-- -->
+
+
+<!-- -->
+</body>
+</html>

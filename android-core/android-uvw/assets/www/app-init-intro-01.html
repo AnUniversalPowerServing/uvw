@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/api/font-awesome.min.css">
+<link rel="stylesheet" href="styles/api/jquery-ui.css">
+<link rel="stylesheet" href="styles/api/bootstrap.min.css">
+<script src="js/api/jquery.min.js"></script>
+<script src="js/api/bootstrap.min.js"></script>
+<script src="js/api/jquery-ui.js"></script>
+<script src="js/api/core-skeleton.js"></script>
+<link href="styles/api/bootstrap-toggle.min.css" rel="stylesheet">
+<link href="styles/api/core-skeleton.css" rel="stylesheet">
+<script src="js/api/bootstrap-toggle.min.js"></script>
+<style>
+@media (min-width: 576px) and (max-width: 767px) {  }
+@media (min-width: 768px) and (max-width: 991px) { }
+@media (min-width: 992px) and (max-width: 1199px) { }
+@media (min-width: 1200px) {  }
+html, body { overflow:hidden; }
+#college-guy { width:200px;height:auto; }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000; }
+/* */
+</style>
+<script type="text/javascript">
+$(document).ready(function(){
+ body_bg_loader('images/bg/1.jpg');
+ setTimeout(function(){ document.getElementById("welcome-info-00").innerHTML=s1.info0(); },500);
+ setTimeout(function(){ document.getElementById("welcome-info-03").innerHTML=s1.info3(); },1500);
+ setTimeout(function(){ document.getElementById("welcome-info-04").innerHTML=s1.info4(); },3000);
+ 
+ setTimeout(function(){ document.getElementById("welcome-info-01").innerHTML=s1.info1(); },1000);
+ setTimeout(function(){ document.getElementById("welcome-info-02").innerHTML=s1.info2(); },2000);
+});
+
+class screen1 {
+info0(){ 
+ var content='<div style="padding:6px;margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5;color:#000;">';
+ content+='Now, you are the citizen of <b>Area, State, Country</b>';
+ content+='</div>';
+ return content;
+}
+info1(){ 
+ var content='<div style="padding:6px;margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5;color:#000;">';
+ content+='<b>100 Million</b> Citizens in your Country';
+ content+='</div>';
+ return content;
+}
+info2(){
+ var content='<div style="padding:6px;margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5;color:#000;">';
+ content+='<b>1 Million</b> Foreigners in your Country are visited for vacation and occupation';
+ content+='</div>';
+ return content;
+}
+info3(){
+ var content='<div style="padding:6px;margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5;color:#000;">';
+ content+='<b>600</b> People are living in your locality';
+ content+='</div>';
+ return content;
+}
+info4(){
+var content='<div style="padding:6px;margin-top:15px;border:2px solid #ccc;transform:rotate(-10deg);background-color:#f5f5f5;color:#000;">';
+	content+='<div>Primary livelihood of your locality is on ';
+	content+='<b>Agriculture</b> sector.</div>';
+	content+='<div align="right">';
+	content+='<button class="btn btn-xs btn-default"><b>See Sectors Ranking</b></button>';
+	content+='</div>';
+	content+='</div>';
+return content;
+}
+}
+
+var s1=new screen1();
+</script>
+</head>
+<body id="body">
+
+ <div class="list-group">
+  <div align="center" class="list-group-item" style="color:#000;border-radius:0px;">
+   <b>WELCOME TO VIRTUAL INDIA</b>
+  </div><!--/.list-group-item -->
+ </div><!--/.list-group -->
+
+ <div class="container-fluid mtop15p">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-6">
+	  <div id="welcome-info-00" class="mtop15p"></div>
+	  <div id="welcome-info-03" class="mtop15p"></div>
+	  <div id="welcome-info-04" class="mtop15p"></div>
+	</div><!--/.col-xs-6 -->
+	<div class="col-md-3 col-sm-6 col-xs-6">
+	  <div id="welcome-info-01" class="mtop15p"></div>
+	  <div id="welcome-info-02" class="mtop15p"></div>
+	</div><!--/.col-xs-6 -->
+  </div><!--/.row -->
+ </div><!--/.container-fluid -->
+ 
+ <div class="footer">
+    <div class="container-fluid">
+    <div class="row">
+	  <a href="app-game-dashboard.html">
+	    <button class="btn btn-danger form-control" style="border-radius:0px;"><b>Begin my Game</b></button>
+	  </a>
+	</div>
+   </div><!--/.container-fluid -->
+ </div><!--/.footer -->
+</body>
+</html>

@@ -1,6 +1,7 @@
 class UICommons {
- appNotificationsHeader_view(){
-  return ('<div class="container-fluid" style="height:51px;background-color:#3885dd;padding-left:15px;padding-right:15px;">'
+ appNotificationsHeader_view_icons(){
+  return (new UICommons().appNotificationsHeader_view_tasks()
+    +'<div class="container-fluid" style="height:51px;background-color:#3885dd;padding-left:15px;padding-right:15px;">'
 	+'<div class="row">'
 	+'<div align="center" class="col-md-2 col-sm-4 col-xs-1 pad0"></div>'
 	+'<div align="center" class="col-md-2 col-sm-4 col-xs-2 pad0">'
@@ -16,7 +17,7 @@ class UICommons {
 	+'<div align="center" class="col-md-2 col-sm-4 col-xs-2 pad0">'
 	+'<a href="#" id="notify-notificationsrequest" data-toggle="tooltip" data-placement="bottom" title="Notifications" '
 	+'onclick="javascript:notify_notificationrequest_effect_stop();">'
-	+'<div style="margin-top:16px;">'
+	+'<div style="margin-top:16px;" data-toggle="modal" data-target="#uiCommonsTaskNotifyHeaderModal" data-backdrop="static">'
 	+'<i id="notify-notificationsrequest-icon" style="color:#fff;" class="fa fa-wpforms fa-notify-icon white-font" '
 	+'aria-hidden="true"></i>'
 	+'&nbsp;&nbsp;<span id="notify-notificationsrequest-badge" class="badge badge-notify1">3</span>'
@@ -96,15 +97,6 @@ class UICommons {
     +'</div>'
     +'</div>'
    );
-   
-		
-		  
-			
-			
-		
-		
-     
-   
  }
  appFooter_view(){
   return ('<div class="footer" style="height:65px;background-color:#3885dd;overflow-x:scroll;overflow-y:hidden;">'
@@ -137,6 +129,12 @@ class UICommons {
 	+'<a href="#" class="font-white">'
 	+'<div><i class="fa fa-2x fa-briefcase"></i></div>'
 	+'<div>Job</div>'
+	+'</a>'
+	+'</li>'
+	+'<li id="appMenuList_profession" align="center" onclick="javascript:appFooterMenu_sel(this.id);">'
+	+'<a href="#" class="font-white">'
+	+'<div><i class="fa fa-2x fa-suitcase"></i></div>'
+	+'<div>Profession</div>'
 	+'</a>'
 	+'</li>'
 	+'<li id="appMenuList_market" align="center" onclick="javascript:appFooterMenu_sel(this.id);">'
@@ -181,6 +179,12 @@ class UICommons {
 	+'<div>Society</div>'	
 	+'</a>'
 	+'</li>'
+	+'<li id="appMenuList_govt" align="center" onclick="javascript:appFooterMenu_sel(this.id);">'
+	+'<a href="#" class="font-white">'
+	+'<div><i class="fa fa-2x fa-briefcase"></i></div>'
+	+'<div>Government</div>'
+	+'</a>'
+	+'</li>'
 	+'<li id="appMenuList_inviteFriends" align="center" onclick="javascript:appFooterMenu_sel(this.id);">'
 	+'<a href="#" class="font-white">'
 	+'<div><i class="fa fa-2x fa-group"></i></div>'
@@ -190,6 +194,48 @@ class UICommons {
 	+'</ul>'
 	+'</div>'  
   );
+ }
+ appNotificationsHeader_view_tasks(){
+  return (
+    '<style>'
+	+'.timerTask-grey { background-color:#ccc;padding:8px; }'
+	+'</style>'
+    +'<div id="uiCommonsTaskNotifyHeaderModal" class="modal fade" role="dialog">'
+	+'<div class="modal-dialog">'
+	+'<div class="modal-content">'
+    +'<div class="modal-header">'
+    +'<button type="button" class="close" data-dismiss="modal">&times;</button>'
+    +'<h5 align="center" class="modal-title"><b>Tasks to Complete !!!</b></h5>'
+    +'</div>'
+    +'<div id="appNotifications_tasks_info" class="modal-body pad0">'
+	
+    +'<div class="list-group mbot0">'
+	+'<div class="list-group-item pad8" style="background-color:#f3fbff;">'
+	+'<div><h5 class="lh25p"><b>Find a Job within 60 days from the completion of your Tenth Standard</b></h5></div>'
+	+'<div class="mtop15p lh25p"><i>You are the citizen of India. '
+	+'Citizen without Job after Tenth Standard is considered as Offender and may keep you in Jail.</i></div>'
+	+'<div align="right" class="mtop15p">'
+	
+	+'<div style="color:red;font-size:11px;">Still Remaining time</div>'
+	+'<div><h4><b>'
+	+'<span class="timerTask-grey">00</span> : <span class="timerTask-grey">00</span> : <span class="timerTask-grey">00</span>'
+	+'</b></h4></div>'
+	+'</div>'
+	
+	+'<div align="right" class="mtop25p">'
+	+'<div class="btn-group">'
+	+'<button class="btn btn-success-o"><b>Go to Recruitment Center</b></button>'
+	+'<button class="btn btn-danger-o"><b>Go by Backdoor</b></button>'
+	+'</div>'
+	+'</div>'
+	
+	+'</div>'
+	+'</div>'
+	
+    +'</div>'
+    +'</div>'
+	+'</div>'
+	+'</div>');
  }
 }
 class UIHome {
@@ -220,7 +266,7 @@ class UIHome {
    );
  }
  offersNewsNeighborhood(){
-   return (new UIHome().watchNews()+'<div class="container-fluid">'
+   return (new UIHome().watchNews_view_modal()+'<div class="container-fluid">'
 	+'<div class="row">'
 	+'<div class="col-xs-4 pad0">'
 	+'<div class="list-group borderRad0">'
@@ -253,7 +299,7 @@ class UIHome {
 	+'</div>'
    );
  }
- watchNews(){
+ watchNews_view_modal(){
   return ('<div id="uiHomeWatchNewsModal" class="modal fade" role="dialog">'
 	+'<div class="modal-dialog">'
 	+'<div class="modal-content">'
@@ -299,6 +345,7 @@ class UIHome {
     +'</div>'
 	+'</div>' );
  }
+ 
 }
 var uiCommons = new UICommons();
 var uiHome = new UIHome();

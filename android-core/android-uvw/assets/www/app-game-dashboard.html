@@ -25,10 +25,25 @@ display_gameTime('gt_week','gt_timer');
 body { background-image:url('images/simple-template.jpg'); }
 .progress { margin-top:6px;height:5px;margin-bottom:0px; }
 .navbar-uvw-header { background-color:#2196f3;background-repeat:repeat-x;margin-bottom:0px;border-radius:0px; }
+.badge-notify1{ background:red;position:relative;top: -15px;left: -10px; }
+.badge-notify2{ background:red;position:relative;top: -15px;left: -4px; }
+.badge-notify3{ background:red;position:relative;top: -15px;left: -6px; }
+.badge { background-color:#fff;color:#000; }
+.fa-notify-icon { font-size:20px;margin-bottom:15px;  }
+#notify-icon-div { margin-top:18px; }
+a#notify-notificationsrequest,a#notify-notificationsrequest:hover, a#notify-notificationsrequest:active { text-decoration:none; }
+.badge-blink { animation-duration: 600ms;animation-name: blink;animation-iteration-count: infinite;
+    animation-direction: alternate;-webkit-animation:blink 600ms infinite; /* Safari and Chrome */ }
+@keyframes blink { from { color:#000; } to { color:#fff;  } }
+@-webkit-keyframes blink { from { color:#000; } to { color:#fff;  } }
+.footer { position: fixed;left:0;bottom:0;width:100%;color:#000; }
 </style>
 <script type="text/javascript">
+function notify_notificationrequest_effect_stop(){
+
+}
 $(document).ready(function(){
- document.getElementById("appNotificationsHeader").innerHTML=uiCommons.appNotificationsHeader_view();
+ document.getElementById("appNotificationsHeader").innerHTML=uiCommons.appNotificationsHeader_view_icons();
  document.getElementById("appStatisticsHeader").innerHTML=uiCommons.appStatisticsHeader_view();
  document.getElementById("homeGUIdisplay").innerHTML=uiHome.gui_display();
  document.getElementById("offersNewsNeighbourhood").innerHTML=uiHome.offersNewsNeighborhood();
@@ -43,45 +58,95 @@ function appFooterMenu_seeNeighborhood(){
  });
 }
 function appFooterMenu_sel(id){
- var ids=["appMenuList_home","appMenuList_profile","appMenuList_property","appMenuList_career","appMenuList_job",
-		  "appMenuList_market","appMenuList_bank","appMenuList_neighborhood","appMenuList_shopping",
-		  "appMenuList_education","appMenuList_entertainment","appMenuList_society","appMenuList_inviteFriends"];
- for(var index=0;index<ids.length;index++){
-  if(ids[index]===id){
-   if($('li#'+ids[index]+'>a').hasClass('font-white')){ $('li#'+ids[index]+'>a').removeClass('font-white'); }
-   if(!$('li#'+ids[index]+'>a').hasClass('font-lgtRed')){ $('li#'+ids[index]+'>a').addClass('font-lgtRed'); }
+ var menuIds=["appMenuList_home","appMenuList_profile","appMenuList_property","appMenuList_career","appMenuList_job",
+		  "appMenuList_profession","appMenuList_market","appMenuList_bank","appMenuList_neighborhood","appMenuList_shopping",
+		  "appMenuList_education","appMenuList_entertainment","appMenuList_society","appMenuList_govt",
+		  "appMenuList_inviteFriends"];
+ var displayIds=["appMenuPage_home","appMenuPage_profile","appMenuPage_property","appMenuPage_career","appMenuPage_job",
+		  "appMenuPage_profession","appMenuPage_market","appMenuPage_bank","appMenuPage_neighborhood","appMenuPage_shopping",
+		  "appMenuPage_education","appMenuPage_entertainment","appMenuPage_society","appMenuPage_govt",
+		  "appMenuPage_inviteFriends"];
+ for(var index=0;index<menuIds.length;index++){
+  if(menuIds[index]===id){
+   if($('li#'+menuIds[index]+'>a').hasClass('font-white')){ $('li#'+menuIds[index]+'>a').removeClass('font-white'); }
+   if(!$('li#'+menuIds[index]+'>a').hasClass('font-lgtRed')){ $('li#'+menuIds[index]+'>a').addClass('font-lgtRed'); }
   } else {
-    if(!$('li#'+ids[index]+'>a').hasClass('font-white')){ $('li#'+ids[index]+'>a').addClass('font-white'); }
-    if($('li#'+ids[index]+'>a').hasClass('font-lgtRed')){ $('li#'+ids[index]+'>a').removeClass('font-lgtRed'); }
+    if(!$('li#'+menuIds[index]+'>a').hasClass('font-white')){ $('li#'+menuIds[index]+'>a').addClass('font-white'); }
+    if($('li#'+menuIds[index]+'>a').hasClass('font-lgtRed')){ $('li#'+menuIds[index]+'>a').removeClass('font-lgtRed'); }
   }
  }
+ if(id==='appMenuList_home'){
+  /* addList */
+  if($('#appNotificationsHeader,#appStatisticsHeader,#homeGUIdisplay,#offersNewsNeighbourhood').hasClass('hide-block')){ 
+    $('#appNotificationsHeader,#appStatisticsHeader,#homeGUIdisplay,#offersNewsNeighbourhood').removeClass('hide-block'); 
+  }
+  /* removeList */
+  if(!$('#bankIntroheader').hasClass('hide-block')){ 
+     $('#bankIntroheader').addClass('hide-block'); 
+   }
+ } else if(id==='appMenuList_bank'){
+   /* addList */
+   if($('#bankIntroheader').hasClass('hide-block')){ 
+     $('#bankIntroheader').removeClass('hide-block'); 
+   }
+   
+   /* removeList */
+   if(!$('#appNotificationsHeader,#appStatisticsHeader,#homeGUIdisplay,#offersNewsNeighbourhood').hasClass('hide-block')){ 
+     $('#appNotificationsHeader,#appStatisticsHeader,#homeGUIdisplay,#offersNewsNeighbourhood').addClass('hide-block'); 
+   }
+ }
 }
+
+function appFooterMenu_seeHome(){
+
+}
+
+$( document ).on( "mousemove", function( event ) {
+  $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+});
 </script> 
 </head>
 <body>
-<style>
-.badge-notify1{ background:red;position:relative;top: -15px;left: -10px; }
-.badge-notify2{ background:red;position:relative;top: -15px;left: -4px; }
-.badge-notify3{ background:red;position:relative;top: -15px;left: -6px; }
-.badge { background-color:#fff;color:#000; }
-.fa-notify-icon { font-size:20px;margin-bottom:15px;  }
-#notify-icon-div { margin-top:18px; }
-a#notify-notificationsrequest,a#notify-notificationsrequest:hover, a#notify-notificationsrequest:active { text-decoration:none; }
-.badge-blink { animation-duration: 600ms;animation-name: blink;animation-iteration-count: infinite;
-    animation-direction: alternate;-webkit-animation:blink 600ms infinite; /* Safari and Chrome */ }
-@keyframes blink { from { color:#000; } to { color:#fff;  } }
-@-webkit-keyframes blink { from { color:#000; } to { color:#fff;  } }
-.footer { position: fixed;left:0;bottom:0;width:100%;color:#000; }
-</style>
-	<div id="appNotificationsHeader"></div>
+    <div id="appNotificationsHeader"></div>
 	<div id="appStatisticsHeader"></div>
 	<div id="homeGUIdisplay"></div>
 	<div id="offersNewsNeighbourhood"></div>
 	<div id="appFooter"></div>
+	  
+	<div id="bankIntroheader" class="hide-block">
+	
+	 <div class="container-fluid">
+	 <div class="row mtop15p">
+	 <div class="col-xs-4">
+	 
+	 </div><!--/.col-xs-4 -->
+	 <div class="col-xs-3">
+	 
+	 </div><!--/.col-xs-4 -->
+	 <div align="center" class="col-xs-5">
+	  <div><i class="fa fa-3x fa-university"></i></div>
+	  <div class="mtop5p mbot5p fs12"><b>Reserve Bank of Virtual India</b></div>
+	  <div id="log"></div>
+	 </div><!--/.col-xs-4 -->
+	 </div><!--/.row -->
+	 </div><!--/.container-fluid -->
+	 
+	 <div style="background-color:#ff5722;color:#fff;">
+	   <ul id="appMenuList" class="list-inline" style="padding-left:15px;">
+        <li style="background-color:#fff;color:#ff5722;">My Bank Account</li>
+		<li>Local Banks</li>
+		<li>State Banks</li>
+		<li>National Banks</li>
+		<li>International Banks</li>
+	   </ul>
+	 </div>
+	 
+	</div><!--/#bankIntroheader -->
+	
+	<div id="appMenuPage_bank">
+	 
+	</div><!--/#appPageHome -->
+	
 
-<!-- -->
-
-
-<!-- -->
 </body>
 </html>

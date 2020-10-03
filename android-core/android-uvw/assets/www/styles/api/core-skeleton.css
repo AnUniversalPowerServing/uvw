@@ -17,6 +17,7 @@ body{ animation: animatedBackground 60s linear infinite;-moz-animation: animated
 
 html, body, #page-content-wrapper { overflow-x:hidden; }
 .label-primary-o { background-color:#fff;color:#2196f3;font-weight:bold; }
+.label-blackGrey-o { background-color:#fff;color:#172a33;font-weight:bold; }
 
 .lh25p { line-height:25px; }
 
@@ -72,12 +73,16 @@ ul.list-inline>li, .div-list-scroll>.list-scroll { float: none; }
 .font-tomatoRed { color:#dc3703; }
 .borderTop-tomatoRed { border-top: 2px solid #dc3703; }
 /* Tomato-Red Flavour ::: End */
-
-
+.border0 { border:0px; }
+.bg-pink-full { background-color:#f59db6;color:#6f2639; }
+.bg-skyBlue-full { color:#172a33;background-color:#92c6fb; }
+.bg-yellow-full { color:#7b4b03;background-color:#e8d0ab; }
 /* LightYellow ::: Start */
 .font-lgtYellow { color:#fbed73; }
 .font-white,.font-white:hover ,.font-white:active,.font-white:focus{ color:#fff; }
 .font-lgtRed,.font-lgtRed:hover,.font-lgtRed:active,.font-lgtRed:focus { color:#fdd3c5; }
+.font-yellow,.font-yellow:hover,.font-yellow:active,.font-yellow:focus { color:#f1ad4a; }
+
 /* LightYellow ::: End */
 
 ul#appMenuList>li>a { text-decoration:none; }

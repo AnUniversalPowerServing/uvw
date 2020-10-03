@@ -69,10 +69,10 @@ function appFooterMenu_sel(id){
  for(var index=0;index<menuIds.length;index++){
   if(menuIds[index]===id){
    if($('li#'+menuIds[index]+'>a').hasClass('font-white')){ $('li#'+menuIds[index]+'>a').removeClass('font-white'); }
-   if(!$('li#'+menuIds[index]+'>a').hasClass('font-lgtRed')){ $('li#'+menuIds[index]+'>a').addClass('font-lgtRed'); }
+   if(!$('li#'+menuIds[index]+'>a').hasClass('font-yellow')){ $('li#'+menuIds[index]+'>a').addClass('font-yellow'); }
   } else {
     if(!$('li#'+menuIds[index]+'>a').hasClass('font-white')){ $('li#'+menuIds[index]+'>a').addClass('font-white'); }
-    if($('li#'+menuIds[index]+'>a').hasClass('font-lgtRed')){ $('li#'+menuIds[index]+'>a').removeClass('font-lgtRed'); }
+    if($('li#'+menuIds[index]+'>a').hasClass('font-yellow')){ $('li#'+menuIds[index]+'>a').removeClass('font-yellow'); }
   }
  }
  if(id==='appMenuList_home'){
